@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 46%, 95%);
+    padding: 0px 20px 0px 20px
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px hsl(212, 23%, 69%, 0.3);
+}
+
+.img-container {
+    width: 100%;
+    height: 12.5rem;
+    background-image: url(./images/drawers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .popup[data-show="false"] {
+    display: none;
+}
+
+.text-container {
+    padding: 30px 35px 30px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-container h4 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-bottom: 20px;
+    color: hsl(217, 19%, 35%);
+}
+
+.text-container p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    color: hsl(217, 19%, 35%);
+    line-height: 1.5;
+}
+
+.info-container {
+    width: 100%;
+    height: 3.75rem;
+}
+
+.info-container .creator-info[data-show="false"] {
+    display: none;
+}
+
+.info-container .social-share[data-show="false"] {
+    display: none;
+}
+
+.info-container .social-share[data-show="true"] .share {
+    background-color: hsl(210, 46%, 95%, 0.3);
+}
+
+.info-container .social-share[data-show="true"] .share svg path {
+    fill: hsl(210, 46%, 95%) !important;
+}
+
+.creator-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+}
+
+.basic-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 2.8125rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: hsl(217, 19%, 35%);
+    background-image: url(./images/avatar-michelle.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-right: 15px;
+}
+
+.publishing {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 35px;
+}
+
+.publishing h5 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8125rem;
+    color: hsl(217, 19%, 35%);
+}
+
+.publishing p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    color: hsl(217, 19%, 35%);
+}
+
+.share {
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(217, 19%, 35%, 0.1);
+}
+
+.social-share {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    background-color: hsl(217, 19%, 35%);
+}
+
+.action {
+    font-family: 'Manrope', sans-serif;
+    color: hsl(212, 23%, 69%);
+    letter-spacing: 4px;
+    margin-right: 10px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    margin-inline: 0.25rem;
+}
+
+.custom-size {
+    font-size: 24px;
+    /* Or any other size */
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        height: 18rem;
+        width: 43.75rem;
+        flex-direction: row;
+    }
+
+    .img-container {
+        height: 100%;
+    }
+
+    .social-share {
+        position: absolute;
+        right: calc(50% - 370px);
+        bottom: calc(50% - 50px);
+        width: 200px;
+        height: 50px;
+        z-index: 1000;
+    }
+
+    .popup {
+        width: 12.5rem;
+        height: 3.75rem;
+        background-color: hsl(217, 19%, 35%);
+        position: absolute;
+        z-index: 100;
+        right: calc((100% - 43.75rem) - ((100% - 43.75rem) / 2) - 60px);
+        bottom: calc((100% - 18rem) - (18rem / 2) + 100px);
+        border: 1px solid hsl(217, 19%, 35%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+    }
+
+    .custom-size {
+        font-size: 20px;
+    }
+}
